@@ -47,7 +47,68 @@ Do not choose one. Use both in a pipelined architecture:
     *   *User*: "Where is that file?" -> **Vector Search**.
     *   *Agent*: "Should I book First Class?" -> **Graph Lookup** (finds `Value: Frugality`) -> "No".
 
-## 5. Artifacts Produced
+## 5. The "Evidence vs. Truth" Boundary
+Based on our analysis, the decision model for "Where to store data?" is not based on time (Short vs Long term), but on **Information Structure**.
+
+| Feature | **Vector Store** (The "Journal") | **Graph Store** (The "Driver's License") |
+| :--- | :--- | :--- |
+| **Data Type** | **Unstructured Nuance** | **Structured Facts** |
+| **Content** | "I feel kinda barely awake today." | `(User)-[:CURRENT_ENERGY]->(Low)` |
+| **Purpose** | **Search & Recall** (Finding similar past moments) | **Logic & State** (Driving current decisions) |
+| **Role** | **The Evidence** (What happened) | **The Conclusion** (What it means) |
+
+### The LLM Decision Algorithm
+The LLM acts as the **Crystallizer**.
+1.  **Ingest**: Everything goes into Vector (The raw log).
+2.  **Analyze**: "Does this change the State of the User?"
+    *   **No**: Leave it in Vector.
+    *   **Yes**: Promote it to Graph (Update Node/Edge).
+
+```mermaid
+graph TD
+    Input[("User Input<br/>'I hate this slow laptop'")]
+
+    subgraph "The Classification Engine"
+        LLM[LLM Agent]
+        Decision{"Is this a Fact?"}
+    end
+
+    subgraph "Vector Store (The Evidence)"
+        VS[(Vector DB)]
+        NoteV["Stores: 'hate', 'slow', 'laptop'<br/>Use: Similarity Search"]
+    end
+
+    subgraph "Graph Store (The Truth)"
+        GS[(Graph DB)]
+        NoteG["Create Edge:<br/>(User)-[:DISLIKES]->(Laptop)<br/>Use: Decision Logic"]
+    end
+
+    Input -->|1. Store Raw| VS
+    Input -->|2. Analyze| LLM
+    LLM --> Decision
+
+    Decision --"No (Just Mood)"--> Stop[Stop]
+    Decision --"Yes (New Preference)"--> GS
+```
+
+## 6. Addressing Data Staleness: The Read Strategy
+**Problem**: If we promote a fact to Graph (e.g., "User became Vegan") but leave the old log in Vector ("I love steak"), the Vector store contains "Stale" evidence.
+
+**Solution**: We do not delete from Vector (Immutable History). We solve this via a **Hierarchy of Truth** at read time.
+
+### The Conflict Resolution Protocol
+1.  **Graph = Current State** (High Authority).
+2.  **Vector = Historical Context** (Low Authority).
+
+### The "Check-Graph-First" Pattern
+When the Agent needs to make a decision:
+1.  **Constraint Check (Graph)**: "Does the user have any hard dietary constraints?" -> Returns `Diet: Vegan`.
+2.  **Nuance Search (Vector)**: "What kind of food does the user like?" -> Returns "Steak (2021)", "Tofu (2024)".
+3.  **Synthesis**: The Agent sees the *current constraint* (Vegan) overrides the *historical evidence* (Steak).
+
+> **Rule**: If Vector and Graph contradict, **Graph Wins**.
+
+## 7. Artifacts Produced
 *   `human_context_model.md`: The 6-dimensional schema.
 *   `data_generator.py`: Generates complex goal-oriented scenarios.
 *   `consistency_test.py`: Validates the async queue architecture.
