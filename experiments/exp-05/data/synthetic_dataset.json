@@ -1,0 +1,191 @@
+[
+  {
+    "id": "0be91744-fa33-44c3-9704-f5e5d5a63045",
+    "type": "Intent",
+    "timestamp": "2023-10-01T09:00:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "goal_name": "Launch 'Dark Mode' Feature",
+    "description": "Implement and release dark mode for the mobile app.",
+    "status": "Active",
+    "metadata": {
+      "priority": "High"
+    }
+  },
+  {
+    "id": "a5ad40a4-f46b-41dc-8c55-83cf3f7d17db",
+    "type": "Episodic",
+    "timestamp": "2023-10-01T10:00:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "event_type": "Meeting",
+    "description": "Kickoff meeting for Dark Mode.",
+    "related_goal": "Launch 'Dark Mode' Feature",
+    "metadata": {
+      "location": "Virtual",
+      "participants": [
+        "Sam Patel",
+        "AI_Agent"
+      ]
+    }
+  },
+  {
+    "id": "dae7aacf-fbdb-4ed4-ae6e-7deea10c4577",
+    "type": "Communication",
+    "timestamp": "2023-10-01T10:49:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Jira",
+    "content": "We need to make sure this doesn't break accessibility. Take your time.",
+    "related_goal": "Launch 'Dark Mode' Feature",
+    "metadata": {
+      "sentiment": "Anxiety",
+      "implied_value": "Reliability"
+    }
+  },
+  {
+    "id": "1cf9b331-ca35-4006-9e38-f7f02c81476b",
+    "type": "Episodic",
+    "timestamp": "2023-10-03T11:49:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "event_type": "Design Review",
+    "description": "Reviewing Figma mocks.",
+    "related_goal": "Launch 'Dark Mode' Feature",
+    "metadata": {
+      "location": "Virtual",
+      "participants": [
+        "Sam Patel",
+        "AI_Agent"
+      ]
+    }
+  },
+  {
+    "id": "53ca7c18-c26d-4590-ae84-3a6dbbca72c2",
+    "type": "Communication",
+    "timestamp": "2023-10-03T12:41:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Jira",
+    "content": "This is too cluttered. Remove the gradient borders.",
+    "related_goal": "Launch 'Dark Mode' Feature",
+    "metadata": {
+      "sentiment": "Frustration",
+      "implied_value": "Minimalism"
+    }
+  },
+  {
+    "id": "cd1e4709-7a57-46b7-80bb-717d22cb41f5",
+    "type": "Intent",
+    "timestamp": "2023-10-03T12:41:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "goal_name": "Q4 Budget Review",
+    "description": "Reduce cloud infrastructure costs by 20%.",
+    "status": "Active",
+    "metadata": {
+      "priority": "High"
+    }
+  },
+  {
+    "id": "b0d1a123-ff35-4be0-854e-14ff3ae7fb3f",
+    "type": "Episodic",
+    "timestamp": "2023-10-03T13:41:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "event_type": "Analysis",
+    "description": "Reviewing AWS bills.",
+    "related_goal": "Q4 Budget Review",
+    "metadata": {
+      "location": "Virtual",
+      "participants": [
+        "Sam Patel",
+        "AI_Agent"
+      ]
+    }
+  },
+  {
+    "id": "b1808ec5-f1e2-49ef-b818-bc8a61516149",
+    "type": "Communication",
+    "timestamp": "2023-10-03T14:23:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Voice_Transcript",
+    "content": "We shouldn't cut R&D servers. We need them for experiments.",
+    "related_goal": "Q4 Budget Review",
+    "metadata": {
+      "sentiment": "Determination",
+      "implied_value": "Innovation"
+    }
+  },
+  {
+    "id": "a4a38820-e3cf-4ba6-8ef2-0e7358d2ba31",
+    "type": "Communication",
+    "timestamp": "2023-10-03T14:40:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Jira",
+    "content": "Just checking in.",
+    "related_goal": "General",
+    "metadata": {
+      "sentiment": "Neutral",
+      "implied_value": "None"
+    }
+  },
+  {
+    "id": "9a76f3ca-daea-4d2a-b4f9-c51217f99844",
+    "type": "Communication",
+    "timestamp": "2023-10-03T15:31:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Voice_Transcript",
+    "content": "Just checking in.",
+    "related_goal": "General",
+    "metadata": {
+      "sentiment": "Neutral",
+      "implied_value": "None"
+    }
+  },
+  {
+    "id": "f1375f5e-b6f4-4707-add7-a4211f0272a4",
+    "type": "Communication",
+    "timestamp": "2023-10-03T16:08:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Voice_Transcript",
+    "content": "Just checking in.",
+    "related_goal": "General",
+    "metadata": {
+      "sentiment": "Neutral",
+      "implied_value": "None"
+    }
+  },
+  {
+    "id": "c9e318d6-16f6-40f9-8b76-89752d8840e3",
+    "type": "Communication",
+    "timestamp": "2023-10-03T16:24:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Jira",
+    "content": "Just checking in.",
+    "related_goal": "General",
+    "metadata": {
+      "sentiment": "Neutral",
+      "implied_value": "None"
+    }
+  },
+  {
+    "id": "ce71734a-ae69-4d7a-bbda-9aad09ec3bba",
+    "type": "Communication",
+    "timestamp": "2023-10-03T16:43:00",
+    "actor_id": "3c4ea3f0-0094-461c-af5f-2b7586d6ad3d",
+    "actor_name": "Sam Patel",
+    "channel": "Jira",
+    "content": "Just checking in.",
+    "related_goal": "General",
+    "metadata": {
+      "sentiment": "Neutral",
+      "implied_value": "None"
+    }
+  }
+]
