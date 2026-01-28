@@ -68,3 +68,19 @@ This document structures our Risk Mitigation strategy into specific **GitHub Mil
 - [ ] **Issue #11**: Create a dataset of ambiguity (Apple co vs fruit, Jaguar car vs animal, Python code vs snake).
 - [ ] **Issue #12**: Implement "Pre-computation" Prompt. Agent outputs: `Entity{id="jaguar_car_v1", type="Car", name="Jaguar"}` vs `Entity{id="jaguar_animal_v1", type="Animal", name="Jaguar"}`.
 - [ ] **Issue #13**: Compare accuracy of "Pre-computed IDs" vs "Backend Fuzzy Matching".
+
+---
+
+## Milestone: [EXP-005] Vector Embeddings for Emotions & Life Context
+**Goal**: Determine if a Vector Database is better suited than a Graph for storing abstract concepts like "Emotions" or unstructured "Life Context".
+
+**Scenario / Test Case**:
+> **Query**: "How has the user's mood changed since they started the new job?"
+> **Graph Approach**: Requires explicit `(User)-[:FELT]->(Emotion)` edges with timestamps. Hard to capture nuance.
+> **Vector Approach**: Retrieve chunks where `content` is semantically similar to "mood" and "job", then use LLM to synthesize.
+
+**Issues to Close**:
+- [ ] **Issue #14**: Research Embedding Models. Determine optimal dimensionality (e.g., 1536 for text-embedding-3-small vs larger models).
+- [ ] **Issue #15**: Implement `VectorContextStore` prototype (ChromaDB/Pinecone).
+- [ ] **Issue #16**: Compare "Retrieval Accuracy" vs "Graph Traversal". Can vectors answer "Who is Sam's boss?" as well as a Graph?
+

@@ -7,6 +7,7 @@
     - [x] Document detailed risk assessment in risk_assessment.md <!-- id: 9 -->
     - [x] Create Experiments & Milestones roadmap <!-- id: 10 -->
     - [ ] [EXP-001] Design "Graph vs Doc Store" Experiment <!-- id: 11 -->
+    - [ ] [EXP-005] Design "Vector vs Graph" Feasibility Experiment <!-- id: 18 -->
 - [ ] **Project Setup (Execution)** <!-- id: 12 -->
     - [ ] Initialize Git Repository & Docs <!-- id: 13 -->
     - [ ] Create GitHub Repository <!-- id: 14 -->
