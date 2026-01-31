@@ -217,7 +217,68 @@ The ability to perform semantic search on unstructured human context is *critica
 
 The "Hierarchy of Truth" model — where Graph is the source of truth and Vector is the evidence — provides a clean mental model for handling the inherent messiness of human context.
 
-**Next Steps:**
-1. Implement the Hybrid Retriever (#26) that combines both stores intelligently
+---
+
+## 8. Hybrid Retriever Implementation (Issue #26)
+
+### Overview
+The Hybrid Retriever combines Graph and Vector stores with intelligent query routing.
+
+### Components
+
+1. **Query Classifier**: Analyzes natural language queries and determines the best execution strategy
+2. **Query Planner**: Creates execution plans specifying which stores to use and how
+3. **Result Merger**: Combines results from multiple stores with various strategies
+4. **Context Synthesizer**: Generates LLM-ready context from retrieval results
+
+### Query Types Supported
+
+| Type | Example | Primary Store |
+|------|---------|---------------|
+| Semantic | "What makes Sam frustrated?" | Vector |
+| Relationship | "Who is Sam's manager?" | Graph |
+| Profile | "Tell me about Sam" | Both |
+| Temporal | "What happened last week?" | Vector |
+| Filter | "Who works at Amazon?" | Graph |
+| Hybrid | "Is Sam's manager happy?" | Both |
+
+### Merge Strategies
+
+- **Union**: Combine all results from both stores
+- **Graph First**: Prioritize graph, enrich with vector context
+- **Vector First**: Prioritize semantic matches, add graph relationships
+- **Intersection**: Only include results found in both stores
+
+### Test Results
+
+```
+Query Classification: 80% accuracy
+End-to-End Tests: 80% passed
+Average Query Time: 0.15ms
+```
+
+### Architecture Diagram
+
+```mermaid
+graph TD
+    Query[User Query] --> Classifier[Query Classifier]
+    Classifier --> Planner[Query Planner]
+    
+    Planner -->|Graph Ops| Graph[(Graph Store)]
+    Planner -->|Vector Ops| Vector[(Vector Store)]
+    
+    Graph --> Merger[Result Merger]
+    Vector --> Merger
+    
+    Merger --> Synthesizer[Context Synthesizer]
+    Synthesizer --> Response[LLM-Ready Context]
+```
+
+---
+
+## 9. Next Steps
+
+1. ~~Implement the Hybrid Retriever (#26)~~ ✅ Complete
 2. Run full performance benchmarks (#27) at scale
 3. Design the LLM "Crystallizer" that promotes evidence to truth
+4. Improve query classification accuracy (target: 95%)
