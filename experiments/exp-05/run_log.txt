@@ -1,0 +1,32 @@
+=== Omniscient EXP-05: Vector Context Store Prototype ===
+[Worker] Started.
+
+--- Phase 1: Ingestion ---
+[API] Received & Queued: a5c6bc0d-da3f-494e-afc9-12b4d1d9bd63 - 'I am feeling really frustrated...'
+[API] Received & Queued: 2bc96ac0-7043-452f-b30c-02583f9c5596 - 'Meeting notes: Project Alpha d...'
+[API] Received & Queued: 0c8db8f7-8bde-42e0-979d-598fa818202d - 'Receipt for coffee at Starbuck...'
+
+--- Phase 2: Immediate Query (The 'Inconsistency' Gap) ---
+[Query] Items in DB immediately: 0
+(Expected: 0 or low count, proving eventual consistency)
+
+--- Phase 3: Waiting for Consistency ---
+[Worker] Processing: a5c6bc0d-da3f-494e-afc9-12b4d1d9bd63
+[DB] Stored event: a5c6bc0d-da3f-494e-afc9-12b4d1d9bd63 (emotion)
+[Worker] Finished: a5c6bc0d-da3f-494e-afc9-12b4d1d9bd63
+[Worker] Processing: 2bc96ac0-7043-452f-b30c-02583f9c5596
+[DB] Stored event: 2bc96ac0-7043-452f-b30c-02583f9c5596 (conversation)
+[Worker] Finished: 2bc96ac0-7043-452f-b30c-02583f9c5596
+[Worker] Processing: 0c8db8f7-8bde-42e0-979d-598fa818202d
+[DB] Stored event: 0c8db8f7-8bde-42e0-979d-598fa818202d (email)
+[Worker] Finished: 0c8db8f7-8bde-42e0-979d-598fa818202d
+[System] Queue drained.
+
+--- Phase 4: Final Query ---
+[Query] Items in DB after processing: 3
+ - Found: [email] Receipt for coffee at Starbucks.
+ - Found: [conversation] Meeting notes: Project Alpha deadline pushed to Friday.
+ - Found: [emotion] I am feeling really frustrated with my commute today.
+[System] Stopping pipeline...
+
+=== Experiment Complete ===
