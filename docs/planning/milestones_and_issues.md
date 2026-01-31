@@ -84,3 +84,18 @@ This document structures our Risk Mitigation strategy into specific **GitHub Mil
 - [ ] **Issue #15**: Implement `VectorContextStore` prototype (ChromaDB/Pinecone).
 - [ ] **Issue #16**: Compare "Retrieval Accuracy" vs "Graph Traversal". Can vectors answer "Who is Sam's boss?" as well as a Graph?
 
+---
+
+## Milestone: [EXP-006] Hybrid Graph + Vector Architecture
+**Goal**: Combine the strengths of Graph (exact relationships) and Vector (semantic similarity) into a unified architecture.
+
+**Scenario / Test Case**:
+> **Query**: "Who is Sam's boss and are they happy?"
+> **Graph**: Finds "Sam -[REPORTS_TO]-> Boss".
+> **Vector**: Finds semantic chunks about Boss's mood.
+> **Combined**: Synthesis of both data sources.
+
+**Issues to Close**:
+- [ ] **Issue #17**: Design Hybrid Schema.
+- [ ] **Issue #18**: Implement Hybrid Retriever (Graph query + Vector similarity search).
+- [ ] **Issue #19**: Evaluate performance/complexity trade-offs.
