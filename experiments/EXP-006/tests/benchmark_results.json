@@ -1,0 +1,175 @@
+{
+  "timestamp": "2026-01-31T17:03:00.375525",
+  "approaches": {
+    "Graph+Vector": {
+      "ingestion": [
+        {
+          "text": "Sam joined Amazon as a Senior Software Engineer la",
+          "duration_ms": 0.19931793212890625,
+          "entities_created": 5
+        },
+        {
+          "text": "I hate this cluttered design, it's giving me anxie",
+          "duration_ms": 0.042438507080078125,
+          "entities_created": 2
+        },
+        {
+          "text": "Bob is Sam's manager and they meet every Monday.",
+          "duration_ms": 0.03314018249511719,
+          "entities_created": 2
+        },
+        {
+          "text": "Working on the homepage redesign project, need to ",
+          "duration_ms": 0.030279159545898438,
+          "entities_created": 2
+        },
+        {
+          "text": "Just moved from San Francisco to New York City for",
+          "duration_ms": 0.05650520324707031,
+          "entities_created": 6
+        }
+      ],
+      "queries": [
+        {
+          "query_type": "semantic",
+          "query": "What makes Sam frustrated?",
+          "duration_ms": 0.10800361633300781,
+          "result_count": 5
+        },
+        {
+          "query_type": "profile",
+          "query": "person_sam",
+          "duration_ms": 0.0858306884765625,
+          "result_count": 1
+        },
+        {
+          "query_type": "traverse",
+          "query": "('person_sam', 'WORKS_AT')",
+          "duration_ms": 0.00762939453125,
+          "result_count": 0
+        },
+        {
+          "query_type": "hybrid",
+          "query": "Tell me about Sam's mood and work",
+          "duration_ms": 0.1633167266845703,
+          "result_count": 17
+        }
+      ],
+      "updates": [
+        {
+          "update": {
+            "mood": "happy"
+          },
+          "duration_ms": 0.0050067901611328125,
+          "success": true
+        },
+        {
+          "update": {
+            "energy": "high"
+          },
+          "duration_ms": 0.0040531158447265625,
+          "success": true
+        },
+        {
+          "update": {
+            "location": "office"
+          },
+          "duration_ms": 0.0030994415283203125,
+          "success": true
+        },
+        {
+          "update": {
+            "focus_level": 8
+          },
+          "duration_ms": 0.0021457672119140625,
+          "success": true
+        }
+      ]
+    },
+    "Graph+Document": {
+      "ingestion": [
+        {
+          "text": "Sam joined Amazon as a Senior Software Engineer la",
+          "duration_ms": 0.06794929504394531,
+          "entities_created": 5
+        },
+        {
+          "text": "I hate this cluttered design, it's giving me anxie",
+          "duration_ms": 0.00858306884765625,
+          "entities_created": 0
+        },
+        {
+          "text": "Bob is Sam's manager and they meet every Monday.",
+          "duration_ms": 0.02002716064453125,
+          "entities_created": 2
+        },
+        {
+          "text": "Working on the homepage redesign project, need to ",
+          "duration_ms": 0.019073486328125,
+          "entities_created": 2
+        },
+        {
+          "text": "Just moved from San Francisco to New York City for",
+          "duration_ms": 0.04100799560546875,
+          "entities_created": 6
+        }
+      ],
+      "queries": [
+        {
+          "query_type": "semantic",
+          "query": "What makes Sam frustrated?",
+          "duration_ms": 0.001430511474609375,
+          "result_count": 0
+        },
+        {
+          "query_type": "profile",
+          "query": "person_sam",
+          "duration_ms": 0.0152587890625,
+          "result_count": 1
+        },
+        {
+          "query_type": "traverse",
+          "query": "('person_sam', 'WORKS_AT')",
+          "duration_ms": 0.00476837158203125,
+          "result_count": 0
+        },
+        {
+          "query_type": "hybrid",
+          "query": "Tell me about Sam's mood and work",
+          "duration_ms": 0.052928924560546875,
+          "result_count": 0
+        }
+      ],
+      "updates": [
+        {
+          "update": {
+            "mood": "happy"
+          },
+          "duration_ms": 0.009059906005859375,
+          "success": true
+        },
+        {
+          "update": {
+            "energy": "high"
+          },
+          "duration_ms": 0.007152557373046875,
+          "success": true
+        },
+        {
+          "update": {
+            "location": "office"
+          },
+          "duration_ms": 0.0054836273193359375,
+          "success": true
+        },
+        {
+          "update": {
+            "focus_level": 8
+          },
+          "duration_ms": 0.0050067901611328125,
+          "success": true
+        }
+      ]
+    }
+  }
+}
