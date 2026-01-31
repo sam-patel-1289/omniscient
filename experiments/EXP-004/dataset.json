@@ -1,0 +1,38 @@
+[
+    {
+        "text": "I ate an juicy Apple for lunch.",
+        "mention": "Apple",
+        "expected_id": "fruit:apple",
+        "category": "homonym_fruit"
+    },
+    {
+        "text": "I bought some Apple stock yesterday.",
+        "mention": "Apple",
+        "expected_id": "company:apple",
+        "category": "homonym_company"
+    },
+    {
+        "text": "The Jaguar stalked its prey through the jungle.",
+        "mention": "Jaguar",
+        "expected_id": "animal:jaguar",
+        "category": "homonym_animal"
+    },
+    {
+        "text": "I drove my Jaguar to the country club.",
+        "mention": "Jaguar",
+        "expected_id": "car:jaguar",
+        "category": "homonym_car"
+    },
+    {
+        "text": "The Python slithered across the floor.",
+        "mention": "Python",
+        "expected_id": "animal:python",
+        "category": "homonym_animal"
+    },
+    {
+        "text": "I wrote a Python script to automate this.",
+        "mention": "Python",
+        "expected_id": "tech:python",
+        "category": "homonym_tech"
+    }
+]
